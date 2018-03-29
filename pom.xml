@@ -11,38 +11,44 @@
 	<name>spring-cloud-stream-binder-sqs</name>
 	<description>Spring Cloud Stream Binder Sqs</description>
 
-	<parent>
+	<!-- <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.10.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
+		<relativePath/> lookup parent from repository
+	</parent> -->
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Edgware.SR2</spring-cloud.version>
+		<spring-cloud-aws.version>1.2.2.RELEASE</spring-cloud-aws.version>
+		<spring-cloud-aws-context.version>1.2.2.RELEASE</spring-cloud-aws-context.version>
+		<spring-cloud-starter-aws-messaging.version>1.2.2.RELEASE</spring-cloud-starter-aws-messaging.version>
+		<spring-cloud-aws-autoconfigure.version>1.2.2.RELEASE</spring-cloud-aws-autoconfigure.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-aws</artifactId>
+			<version>1.2.2.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-aws-context</artifactId>
-			<!-- <version>{spring-cloud.version}</version> -->
+			<version>1.2.2.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-aws-messaging</artifactId>
+			<version>1.2.2.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-aws-autoconfigure</artifactId>
-			<!-- <version>{spring-cloud.version}</version> -->
+			<version>1.2.2.RELEASE</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework.integration/spring-integration-aws -->
 		<dependency>
@@ -54,25 +60,27 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream</artifactId>
+			<!-- <version>1.3.2.RELEASE</version> -->
 		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.16.20</version>
 			<optional>true</optional>
 		</dependency>
 		
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
-			<!-- <version>20180130</version> -->
+			<version>20180130</version>
 		</dependency>
 		
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-stream-test-support</artifactId>
@@ -92,14 +100,14 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<build>
+	<!-- <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-	</build>
+	</build> -->
 
 
 </project>

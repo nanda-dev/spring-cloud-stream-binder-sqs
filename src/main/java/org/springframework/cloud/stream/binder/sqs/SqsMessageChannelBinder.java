@@ -25,7 +25,9 @@ import org.springframework.util.ObjectUtils;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 
 public class SqsMessageChannelBinder extends
-	AbstractMessageChannelBinder<ExtendedConsumerProperties<SqsConsumerProperties>, ExtendedProducerProperties<SqsProducerProperties>, SqsProvisioner>
+	AbstractMessageChannelBinder<ExtendedConsumerProperties<SqsConsumerProperties>, 
+								ExtendedProducerProperties<SqsProducerProperties>, 
+								SqsProvisioner> 
 	implements ExtendedPropertiesBinder<MessageChannel, SqsConsumerProperties, SqsProducerProperties> {
 	
 	private SqsExtendedBindingProperties extendedBindingProperties = new SqsExtendedBindingProperties();
@@ -60,17 +62,16 @@ public class SqsMessageChannelBinder extends
 
 	@Override
 	protected MessageProducer createConsumerEndpoint(ConsumerDestination destination, String group,
-			ExtendedConsumerProperties<SqsConsumerProperties> properties) throws Exception {
-		SqsMessageDrivenChannelAdapter adapter = new SqsMessageDrivenChannelAdapter(this.amazonSqs, null);
+			ExtendedConsumerProperties<SqsConsumerProperties> properties) throws Exception {		
+		SqsMessageDrivenChannelAdapter adapter = new SqsMessageDrivenChannelAdapter(this.amazonSqs, destination.getName());
 		return adapter;
 	}
 
 	@Override
 	protected MessageHandler createProducerMessageHandler(ProducerDestination destination,
 			ExtendedProducerProperties<SqsProducerProperties> properties, MessageChannel errorChannel) throws Exception {
-
 		SqsMessageHandler msgHandler = new SqsMessageHandler(this.amazonSqs);
-		//msgHandler.
+		msgHandler.setQueue(destination.getName());
 		return msgHandler;
 	}
 	

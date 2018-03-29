@@ -28,15 +28,13 @@ public class SqsProvisioner implements
 	@Override
 	public ConsumerDestination provisionConsumerDestination(String name, String group,
 			ExtendedConsumerProperties<SqsConsumerProperties> properties) throws ProvisioningException {
-		// TODO Auto-generated method stub
-		return null;
+		return new SqsConsumerDestination(name);
 	}
 
 	@Override
 	public ProducerDestination provisionProducerDestination(String name,
 			ExtendedProducerProperties<SqsProducerProperties> properties) throws ProvisioningException {
-		// TODO Auto-generated method stub
-		return null;
+		return new SqsProducerDestination(name);
 	}
 
 }
