@@ -6,15 +6,15 @@ public class SqsProducerDestination implements ProducerDestination{
 	private final String queueName;
 	
 	SqsProducerDestination(String queueName){
-		this.queueName = queueName;
+		this.queueName = "activation-queue";
 	}
 
-	@Override
+	//@Override
 	public String getName() {
 		return this.queueName;
 	}
 
-	@Override
+	//@Override
 	public String getNameForPartition(int partition) {
 		return this.queueName;
 	}

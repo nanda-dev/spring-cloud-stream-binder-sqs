@@ -7,10 +7,10 @@ public class SqsConsumerDestination implements ConsumerDestination {
 	private final String queueName;
 	
 	SqsConsumerDestination(String queueName){
-		this.queueName = queueName;
+		this.queueName = "activation-queue";
 	}
 
-	@Override
+	//@Override
 	public String getName() {
 		return this.queueName;
 	}

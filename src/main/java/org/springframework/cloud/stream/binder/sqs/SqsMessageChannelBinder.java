@@ -48,13 +48,13 @@ public class SqsMessageChannelBinder extends
 		this.amazonSqs = amazonSqs;
 	}
 
-	@Override
+	//@Override
 	public SqsConsumerProperties getExtendedConsumerProperties(String channelName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	//@Override
 	public SqsProducerProperties getExtendedProducerProperties(String channelName) {
 		// TODO Auto-generated method stub
 		return null;
