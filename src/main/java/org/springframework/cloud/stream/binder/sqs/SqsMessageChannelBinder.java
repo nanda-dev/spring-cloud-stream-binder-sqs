@@ -43,7 +43,7 @@ public class SqsMessageChannelBinder extends
 	public SqsMessageChannelBinder(AmazonSQSAsync amazonSqs,
 			SqsBinderConfigurationProperties configurationProperties,
 			SqsProvisioner provisioningProvider) {
-		super(true, headersToMap(configurationProperties), provisioningProvider);
+		super(false, headersToMap(configurationProperties), provisioningProvider);
 		this.configurationProperties = configurationProperties;
 		this.amazonSqs = amazonSqs;
 	}
